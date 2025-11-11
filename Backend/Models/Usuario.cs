@@ -1,14 +1,17 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Backend.Models
 {
     public class Usuario
     {
+        [Key]
         public int Id { get; set; }
         public string Nombre { get; set; } = string.Empty;
         public string Correo { get; set; } = string.Empty;
         public string Contrasena { get; set; } = string.Empty;
         public byte Estado { get; set; }
         public DateTime Fecha_creacion { get; set; }
-        public int Id_Rol { get; set; }
+        public int RolId { get; set; }
 
         public Role Rol { get; set; } = null!;
 
@@ -16,7 +19,7 @@ namespace Backend.Models
         public ICollection<Nomina> Nominas { get; set; } = new List<Nomina>();
         public ICollection<Factura> Facturas { get; set; } = new List<Factura>();
 
-        public ICollection<Horario> horarios { get; set; } = new List<Horario>();
-        public ICollection<Asistencia> asistencias { get; set; } = new List<Asistencia>();
+        public ICollection<Horario> Horarios { get; set; } = new List<Horario>();
+        public ICollection<Asistencia> Asistencias { get; set; } = new List<Asistencia>();
     }
 }

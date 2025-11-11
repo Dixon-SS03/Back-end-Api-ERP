@@ -1,9 +1,13 @@
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 namespace Backend.Models
 {
     public class Factura
     {
+        [Key]
         public int Id { get; set; }
-        public int Id_Usuario { get; set; }
+        public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; } = null!;
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
